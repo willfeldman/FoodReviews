@@ -14,10 +14,15 @@
     <body style="padding: 20px;">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="UsersList.php">View all users</a></li>
+                <li class="breadcrumb-item"><a href="index.php">Data</a></li>
+                <li class="breadcrumb-item"><a href="UsersList.php">Users</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Edit User #<?php echo $user->getId() ?></li>
             </ol>
         </nav>
+        <div class="alert alert-dark alert-dismissible fade show" role="alert">
+            Want to create a new user instead? <a href="AddUserForm.php" class="alert-link">Go here</a>!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
         <h1>Edit User @<?php echo $user->getUsername() ?> <a href="FormProcessing/DeleteUser.php?user=<?php echo $user->getId() ?>"><button type="button" class="btn btn-danger">Delete user</button></a></h1>
         <hr>
         <div>

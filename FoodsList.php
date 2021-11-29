@@ -1,6 +1,6 @@
-<?php include 'DAOs/UserDAO.php';?>
+<?php include 'DAOs/FoodDAO.php';?>
 <?php
-    $database_connection = new UserDAO();
+    $database_connection = new FoodDAO();
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
@@ -14,21 +14,21 @@
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.php">Data</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Users</li>
+                <li class="breadcrumb-item active" aria-current="page">Foods</li>
             </ol>
         </nav>
         <div>
-            <h1>Users</h1>
+            <h1>Foods</h1>
             <hr>
             <ul class="list-group">
                 <?php 
-                    foreach ($database_connection->findAllUsers() as $user) {
-                        echo "<li class='list-group-item'><b>First name</b>: ". $user->getFirstName() . ", <b>Last name</b>: " . $user->getLastName() . ", <b>Username</b>: " . $user->getUsername() . ", <b>Password</b>: " . $user->getPassword() . ", <b>Email</b>: " . $user->getEmail() . ", <b>DOB</b>: " . substr($user->getDOB(), 0, 10) . "<a href=EditUserForm.php?user='" . $user->getId() . "'><button type='button' class='btn btn-link'>Edit</button></a>" . "</li>";
+                    foreach ($database_connection->findAllFoods() as $food) {
+                        echo "<li class='list-group-item'><b>Name</b>: ". $food->getName() . "<a href=EditFoodForm.php?food='" . $food->getId() . "'><button type='button' class='btn btn-link'>Edit</button></a>" . "</li>";
                     }
                 ?>
             </ul>
             <br>
-            <a href="AddUserForm.php"><button type="button" class="btn btn-primary">Create</button></a>
+            <a href="AddFoodForm.php"><button type="button" class="btn btn-primary">Create</button></a>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>

@@ -13,7 +13,8 @@
     <body style="padding: 20px;">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="UsersList.php">View all users</a></li>
+                <li class="breadcrumb-item"><a href="index.php">Data</a></li>
+                <li class="breadcrumb-item"><a href="UsersList.php">Users</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Add new user</li>
             </ol>
         </nav>
