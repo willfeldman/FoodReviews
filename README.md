@@ -1,5 +1,7 @@
 To run locally, make sure the latest version of PHP is installed on your computer.
 
+Import the database structure and data using "Data Import" from the SQL Data Dump folder. Make sure Config.php has the correct information setup for your database.
+
 Open terminal and cd to the root directory of the project.
 
 Then, run “php -S localhost:8000” in terminal.
