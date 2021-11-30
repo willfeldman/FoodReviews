@@ -1,10 +1,7 @@
 <?php include 'DAOs/ReviewDAO.php';?>
-<?php include 'DAOs/UserDAO.php';?>
 <?php
     $review_connection = new ReviewDAO();
     $review = $review_connection->findReviewById($_GET['review']);
-    
-    $user_connection = new UserDAO();
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
@@ -51,17 +48,6 @@
                 <br>
                 <div class="row g-3 align-items-center">
                     <input type="text" id="user_id" name="user_id" value="<?php echo $review->getUserId() ?>" placeholder="User" class="form-control">
-                </div>
-                <div class="row g-3 align-items-center">
-                    <select class="form-select form-control" id="user_id" name="user_id">
-                        <option selected value="<?php echo $user_connection->getUserByID($review->getUserId())
-                            ?>"><?php echo $review->getUserId() ?></option>
-                        <option value="ONE">ONE</option>
-                        <option value="TWO">TWO</option>
-                        <option value="THREE">THREE</option>
-                        <option value="FOUR">FOUR</option>
-                        <option value="FIVE">FIVE</option>
-                    </select>
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">

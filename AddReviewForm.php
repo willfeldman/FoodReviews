@@ -1,6 +1,6 @@
-<?php include 'DAOs/UserDAO.php';?>
+<?php include 'DAOs/ReviewDAO.php';?>
 <?php
-    $database_connection = new UserDAO();
+    $database_connection = new ReviewDAO();
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
@@ -14,36 +14,42 @@
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.php">Data</a></li>
-                <li class="breadcrumb-item"><a href="UsersList.php">Users</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Add new user</li>
+                <li class="breadcrumb-item"><a href="ReviewsList.php">Reviews</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Add new review</li>
             </ol>
         </nav>
-        <h1>Add new user</h1>
+        <h1>Add new review</h1>
         <hr>
         <div>
-            <form action="FormProcessing/AddUser.php" method="post">
+            <form action="FormProcessing/AddReview.php" method="post">
                 <div class="row g-3 align-items-center">
-                    <input type="firstname" id="firstname" name="firstname" placeholder="First name" class="form-control">
+                    <input type="textbox" id="content" name="content" placeholder="Content" class="form-control">
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">
-                    <input type="lastname" id="lastname" name="lastname" placeholder="Last name" class="form-control">
+                    <select class="form-select form-control" id="rating" name="rating">
+                        <option value="ONE">ONE</option>
+                        <option value="TWO">TWO</option>
+                        <option value="THREE">THREE</option>
+                        <option value="FOUR">FOUR</option>
+                        <option value="FIVE">FIVE</option>
+                    </select>
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">
-                    <input type="username" id="username" name="username" placeholder="Username" class="form-control">
+                    <input type="text" id="dor" name="dor" placeholder="Date of review" class="form-control">
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">
-                    <input type="text" id="password" name="password" placeholder="Password" class="form-control">
+                    <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control">
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">
-                    <input type="email" id="email" name="email" placeholder="Email" class="form-control">
+                    <input type="text" id="location_id" name="location_id" placeholder="Location" class="form-control">
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">
-                    <input type="dob" id="dob" name="dob" placeholder="DOB (ex: 2002-03-21)" class="form-control">
+                    <input type="text" id="food_id" name="food_id" placeholder="Food" class="form-control">
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">
