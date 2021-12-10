@@ -24,6 +24,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         <h1>Edit <?php echo $location->getName() ?> <a href="FormProcessing/DeleteLocation.php?location=<?php echo $location->getId() ?>"><button type="button" class="btn btn-danger">Delete location</button></a></h1>
+        <?php echo "<p><a class='btn btn-link' href=ReviewsByLocation.php?location=" . $location->getId() . ">View Reviews of " . $location->getName()  . "</a></p>" ?>
         <hr>
         <div>
             <form action="FormProcessing/UpdateLocation.php?location=<?php echo $location->getId() ?>" method="post">

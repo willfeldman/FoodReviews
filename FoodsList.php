@@ -23,7 +23,7 @@
             <ul class="list-group">
                 <?php 
                     foreach ($database_connection->findAllFoods() as $food) {
-                        echo "<li class='list-group-item'><b>Name</b>: ". $food->getName() . "<a href=EditFoodForm.php?food='" . $food->getId() . "'><button type='button' class='btn btn-link'>Edit</button></a>" . "</li>";
+                        echo "<li class='list-group-item'><b>Name</b>: ". $food->getName() . "<a href=EditFoodForm.php?food='" . $food->getId() . "'><button type='button' class='btn btn-link link-danger'>Edit</button></a>" . "<a href=ReviewsByFood.php?food=" . $food->getId() . "><button type='button' class='btn btn-link'>View Reviews of " . $food->getName()  . "</button></a>" . "</li>";
                     }
                 ?>
             </ul>

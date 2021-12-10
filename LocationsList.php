@@ -23,7 +23,7 @@
             <ul class="list-group">
                 <?php 
                     foreach ($database_connection->findAllLocations() as $location) {
-                        echo "<li class='list-group-item'><b>Name</b>: ". $location->getName() . ", <b>Address</b>: " . $location->getAddress() . "<a href=EditLocationForm.php?location='" . $location->getId() . "'><button type='button' class='btn btn-link'>Edit</button></a>" . "</li>";
+                        echo "<li class='list-group-item'><b>Name</b>: ". $location->getName() . ", <b>Address</b>: " . $location->getAddress() . "<a href=EditLocationForm.php?location='" . $location->getId() . "'><button type='button' class='btn btn-link link-danger'>Edit</button></a>" . "<a href=ReviewsByLocation.php?location=" . $location->getId() . "><button type='button' class='btn btn-link'>View Reviews of " . $location->getName()  . "</button></a>" . "</li>";
                     }
                 ?>
             </ul>

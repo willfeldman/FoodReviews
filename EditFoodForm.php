@@ -24,6 +24,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         <h1>Edit <?php echo $food->getName() ?> <a href="FormProcessing/DeleteFood.php?food=<?php echo $food->getId() ?>"><button type="button" class="btn btn-danger">Delete food</button></a></h1>
+        <?php echo "<p><a class='btn btn-link' href=ReviewsByFood.php?food=" . $food->getId() . ">View Reviews of " . $food->getName()  . "</a></p>" ?>
         <hr>
         <div>
             <form action="FormProcessing/UpdateFood.php?food=<?php echo $food->getId() ?>" method="post">

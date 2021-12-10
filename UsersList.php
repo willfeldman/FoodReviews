@@ -23,7 +23,7 @@
             <ul class="list-group">
                 <?php 
                     foreach ($database_connection->findAllUsers() as $user) {
-                        echo "<li class='list-group-item'><b>First name</b>: ". $user->getFirstName() . ", <b>Last name</b>: " . $user->getLastName() . ", <b>Username</b>: " . $user->getUsername() . ", <b>Password</b>: " . $user->getPassword() . ", <b>Email</b>: " . $user->getEmail() . ", <b>DOB</b>: " . substr($user->getDOB(), 0, 10) . "<a href=EditUserForm.php?user='" . $user->getId() . "'><button type='button' class='btn btn-link'>Edit</button></a>" . "</li>";
+                        echo "<li class='list-group-item'><b>First name</b>: ". $user->getFirstName() . ", <b>Last name</b>: " . $user->getLastName() . ", <b>Username</b>: " . $user->getUsername() . ", <b>Password</b>: " . $user->getPassword() . ", <b>Email</b>: " . $user->getEmail() . ", <b>DOB</b>: " . substr($user->getDOB(), 0, 10) . "<a href=EditUserForm.php?user='" . $user->getId() . "'><button type='button' class='btn btn-link link-danger'>Edit</button></a>" . "<a href=ReviewsByUser.php?user=" . $user->getId() . "><button type='button' class='btn btn-link'>View " . $user->getFirstName() . "'s Reviews</button></a>" . "</li>";
                     }
                 ?>
             </ul>

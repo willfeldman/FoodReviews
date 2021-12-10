@@ -41,15 +41,15 @@
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">
-                    <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control">
+                    <input type="text" id="user_id" name="user_id" placeholder="User ID" class="form-control">
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">
-                    <input type="text" id="location_id" name="location_id" placeholder="Location" class="form-control">
+                    <input type="text" id="location_id" name="location_id" placeholder="Location ID" class="form-control">
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">
-                    <input type="text" id="food_id" name="food_id" placeholder="Food" class="form-control">
+                    <input type="text" id="food_id" name="food_id" placeholder="Food ID" class="form-control">
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">

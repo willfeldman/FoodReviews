@@ -23,7 +23,8 @@
             Want to create a new user instead? <a href="AddUserForm.php" class="alert-link">Go here</a>!
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        <h1>Edit User @<?php echo $user->getUsername() ?> <a href="FormProcessing/DeleteUser.php?user=<?php echo $user->getId() ?>"><button type="button" class="btn btn-danger">Delete user</button></a></h1>
+        <h1>Edit <?php echo $user->getFirstName() . " " . $user->getLastName() ?> <a href="FormProcessing/DeleteUser.php?user=<?php echo $user->getId() ?>"><button type="button" class="btn btn-danger">Delete user</button></a></h1>
+        <?php echo "<p><a class='btn btn-link' href=ReviewsByUser.php?user=" . $user->getId() . ">View " . $user->getFirstName()  . "'s Reviews</a></p>" ?>
         <hr>
         <div>
             <form action="FormProcessing/UpdateUser.php?user=<?php echo $user->getId() ?>" method="post">

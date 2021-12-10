@@ -1,6 +1,7 @@
 <?php include 'DAOs/ReviewDAO.php';?>
 <?php
     $database_connection = new ReviewDAO();
+    $byUser = intval($_GET['user']);
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
@@ -14,15 +15,16 @@
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.php">Data</a></li>
+                <li class="breadcrumb-item"><a href="UsersList.php">Users</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Reviews</li>
             </ol>
         </nav>
         <div>
-            <h1>Reviews</h1>
+            <h1>Reviews by <?php echo $database_connection->findReviewerName($byUser) ?></h1>
             <hr>
             <ul class="list-group">
                 <?php 
-                    foreach ($database_connection->findAllReviews() as $review) {
+                    foreach ($database_connection->findAllReviewByUserId($byUser) as $review) {
                         echo "<li class='list-group-item'><b>Content</b>: ". $review->getContent() . ", <b>Rating</b>: " . $review->getRating() . ", <b>Date of review</b>: " . substr($review->getDOR(), 0, 10) . ", <b>User</b>: " . "<a href=EditUserForm.php?user=". $review->getUserId() . ">" . $database_connection->findReviewerName($review->getUserId()) . "</a>" . ", <b>Location</b>: " . "<a href=EditLocationForm.php?location=" . $review->getLocationId() . ">" . $database_connection->findReviewLocation($review->getLocationId()) . "</a>" . ", <b>Food</b>: " . "<a href=EditFoodForm.php?food=" . $review->getFoodId() . ">" . $database_connection->findReviewFood($review->getFoodId()) . "</a>" . "<a href=EditReviewForm.php?review='" . $review->getId() . "'><button type='button' class='btn btn-link link-danger'>Edit</button></a>" . "</li>";
                     }
                 ?>

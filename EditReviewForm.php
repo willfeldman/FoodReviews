@@ -47,16 +47,23 @@
                 </div>
                 <br>
                 <div class="row g-3 align-items-center">
-                    <input type="text" id="user_id" name="user_id" value="<?php echo $review->getUserId() ?>" placeholder="User" class="form-control">
+                    <input type="text" id="user_id" name="user_id" value="<?php echo $review->getUserId() ?>" placeholder="User ID" class="form-control">
                 </div>
-                <br>
+                <?php
+                    echo "<p><a href=EditUserForm.php?user=" . $review->getUserId() . ">Edit " . $review_connection->findReviewerName($review->getUserId()) . "</a></p>"
+                ?>
                 <div class="row g-3 align-items-center">
-                    <input type="text" id="location_id" name="location_id" value="<?php echo $review->getLocationId() ?>" placeholder="Location" class="form-control">
+                    <input type="text" id="location_id" name="location_id" value="<?php echo $review->getLocationId() ?>" placeholder="Location ID" class="form-control">
                 </div>
-                <br>
+                <?php
+                    echo "<p><a href=EditLocationForm.php?location=" . $review->getLocationId() . ">Edit " . $review_connection->findReviewLocation($review->getLocationId()) . "</a></p>"
+                ?>
                 <div class="row g-3 align-items-center">
-                    <input type="text" id="food_id" name="food_id" value="<?php echo $review->getFoodId() ?>" placeholder="Food" class="form-control">
+                    <input type="text" id="food_id" name="food_id" value="<?php echo $review->getFoodId() ?>" placeholder="Food ID" class="form-control">
                 </div>
+                <?php
+                    echo "<p><a href=EditFoodForm.php?food=" . $review->getFoodId() . ">Edit " . $review_connection->findReviewFood($review->getFoodId()) . "</a></p>"
+                ?>
                 <br>
                 <div class="row g-3 align-items-center">
                     <input class="btn btn-success btn-md px-3" id="submit" type="submit" value="Update">
