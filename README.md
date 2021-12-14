@@ -12,3 +12,5 @@ A demo of the site is present in demo.mp4.
 
 
 Note: If you delete a location, user, or food that a review depends on, the review will be deleted through a cascade.
+
+Word Portion: https://docs.google.com/document/d/16x96fV7lD6xB_3wK0AWdNkYjCHdokIdfPczA5xAMxVg/edit
